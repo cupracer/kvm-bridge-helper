@@ -19,7 +19,7 @@ fi
 
 while read i; 
 do
-	VNET=$(echo $i | grep vnet | awk '{print $2}' | tr -d ':')
+	VNET=$(echo $i | awk '{print $2}' | tr -d ':')
 	$LOGGER "Attaching $VNET to $BRIDGE"
 	ip link set dev $VNET master $BRIDGE
 done < $STATUS_FILE

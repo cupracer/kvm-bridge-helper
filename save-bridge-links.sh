@@ -10,5 +10,5 @@ LOGGER="logger -t KVM-BRIDGE-MONITOR"
 STATUS_FILE=/tmp/bridge-info.${1}.txt
 
 $LOGGER "Saving $BRIDGE links to $STATUS_FILE before going down."
-bridge link show ${BRIDGE} > /tmp/bridge-info.${BRIDGE}.txt
+bridge link show ${BRIDGE} | grep vnet > /tmp/bridge-info.${BRIDGE}.txt
 
