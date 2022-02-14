@@ -24,6 +24,6 @@ do
 	ip link set dev $VNET master $BRIDGE
 done < $STATUS_FILE
 
-$LOGGER "Removing processed status file for $BRIDGE"
+$LOGGER "Removing processed status file for $BRIDGE ($STATUS_FILE)"
 rm $STATUS_FILE
 
